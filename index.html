@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UniBudget ULIMA</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>UniBudget ULIMA</h1>
-    <div id="root"></div>
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniBudget ULIMA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>💰 UniBudget ULIMA</h1>
+    <p>Tu asistente de control financiero estudiantil</p>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Agregar gasto o ingreso</h2>
+      <input type="text" id="descripcion" placeholder="Descripción" />
+      <input type="number" id="monto" placeholder="Monto (S/.)" />
+      <select id="tipo">
+        <option value="ingreso">Ingreso</option>
+        <option value="gasto">Gasto</option>
+      </select>
+      <button onclick="agregarRegistro()">Agregar</button>
+    </section>
+
+    <section class="list-section">
+      <h2>Registros</h2>
+      <ul id="lista"></ul>
+    </section>
+
+    <section class="total-section">
+      <h2>Resumen</h2>
+      <p>Total ingresos: <span id="totalIngresos">0</span> S/.</p>
+      <p>Total gastos: <span id="totalGastos">0</span> S/.</p>
+      <p><strong>Balance: <span id="balance">0</span> S/.</strong></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 UniBudget ULIMA — Sistema básico de control financiero</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
+
 
