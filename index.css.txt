@@ -1,0 +1,88 @@
+:root{
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #fb923c;
+  --accent-2: #f97316;
+  --text: #111827;
+  --soft: #f8fafc;
+  --border: #e6e9ee;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+.app-root{min-height:100vh; display:flex; flex-direction:column;}
+.topbar{background:var(--card); box-shadow:0 1px 4px rgba(16,24,40,0.05);}
+.topbar-inner{max-width:1100px; margin:0 auto; padding:16px; display:flex; justify-content:space-between; align-items:center;}
+.logo-box{display:flex; align-items:center; gap:12px;}
+.logo-circle{width:48px; height:48px; border-radius:10px; background:linear-gradient(180deg,var(--accent),var(--accent-2)); color:white; display:flex; align-items:center; justify-content:center; font-weight:700;}
+.title{font-weight:700}
+.subtitle{color:var(--muted); font-size:13px}
+
+.top-controls{display:flex; gap:10px; align-items:center;}
+.control-month{padding:8px 10px; border:1px solid var(--border); border-radius:8px}
+.btn-export{background:transparent; border:1px solid var(--border); padding:8px 10px; border-radius:8px; cursor:pointer}
+
+.container{max-width:1100px; margin:20px auto; display:grid; grid-template-columns: 1fr 1fr 360px; gap:18px; padding:0 8px;}
+.card{background:var(--card); padding:14px; border-radius:12px; box-shadow:0 1px 4px rgba(16,24,40,0.04);}
+
+.left-col{display:flex; flex-direction:column; gap:12px;}
+.form-compact h3{margin:0 0 8px 0}
+.form-compact .row{display:flex; flex-direction:column; gap:6px; margin-bottom:6px;}
+.form-compact input[type="text"], .form-compact input[type="date"], .form-compact input[type="number"], .form-compact select{padding:8px; border-radius:8px; border:1px solid var(--border)}
+
+.actions{display:flex; gap:8px; margin-top:6px;}
+.btn-primary{background:var(--accent); color:white; border:none; padding:10px 12px; border-radius:8px; cursor:pointer}
+.btn-ghost{background:transparent; border:1px solid var(--border); padding:8px 10px; border-radius:8px; cursor:pointer}
+
+.summary{margin-top:6px;}
+.summary-values{display:flex; gap:16px; margin-top:8px}
+.summary-label{font-size:12px; color:var(--muted)}
+.summary-value{font-weight:700}
+.summary-value.income{color:#059669}
+.summary-value.expense{color:#ef4444}
+.summary-value.balance{color:#111827}
+
+.middle-col{display:flex; flex-direction:column; gap:12px;}
+.charts{min-height:140px; display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:center}
+.charts svg{max-width:100%}
+.tips ul{margin:0; padding-left:18px}
+
+.right-col{display:flex; flex-direction:column; gap:12px}
+.list{display:flex; flex-direction:column; gap:8px; max-height:520px; overflow:auto; margin-top:8px}
+.tx-row{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:10px; border-radius:8px; border:1px solid #f1f5f9}
+.tx-cat{font-weight:600}
+.tx-note{font-size:12px; color:var(--muted)}
+.tx-right{display:flex; flex-direction:column; align-items:flex-end; gap:6px}
+.tx-amount{font-weight:700}
+.tx-amount.income{color:#059669}
+.tx-amount.expense{color:#ef4444}
+.tx-actions{display:flex; gap:8px; margin-top:6px}
+.link{background:transparent; border:none; color:var(--muted); cursor:pointer; font-size:13px}
+.link.danger{color:#ef4444}
+
+.budgets{margin-top:8px}
+.budget-row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:8px; border-radius:8px; background:var(--soft)}
+.budget-left{display:flex; gap:10px; align-items:center}
+.dot{width:12px; height:12px; border-radius:3px}
+.budget-cat{font-weight:600}
+.budget-meta{font-size:13px; color:var(--muted)}
+.progress{width:120px; height:8px; background:#fff; border-radius:8px; overflow:hidden; border:1px solid var(--border)}
+.progress > div{height:100%; width:0; background:var(--accent); transition:width .4s ease}
+
+.footer{max-width:1100px; margin:20px auto; text-align:center; color:var(--muted); font-size:13px}
+
+/* responsive */
+@media (max-width:1000px){
+  .container{grid-template-columns: 1fr; padding:0 12px}
+  .right-col{order:3}
+  .middle-col{order:2}
+}
