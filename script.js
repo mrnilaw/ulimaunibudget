@@ -1,8 +1,13 @@
 let ingresos = 0;
 let gastos = 0;
 
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById("btnAgregar");
+  btn.addEventListener("click", agregarRegistro);
+});
+
 function agregarRegistro() {
-  const descripcion = document.getElementById('descripcion').value;
+  const descripcion = document.getElementById('descripcion').value.trim();
   const monto = parseFloat(document.getElementById('monto').value);
   const tipo = document.getElementById('tipo').value;
   const lista = document.getElementById('lista');
